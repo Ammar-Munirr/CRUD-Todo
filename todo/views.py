@@ -15,3 +15,7 @@ def task(request):
 
 
 
+def delete(request,id):
+    task = Todo.objects.get(id=id)
+    task.delete()
+    return redirect('/app/task')

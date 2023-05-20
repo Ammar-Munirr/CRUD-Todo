@@ -15,7 +15,7 @@
     <ul>
     {% for task in tasks %}
             <li>{{task.task}}</li>
-            <a href=""><button>Delete</button></a>
+            <a href="{% url 'delete' task.id %}"><button>Delete</button></a>
             <a href=""><button>Edit</button></a>
     {% empty %}
         <p>There is no task for you Sir/Madam</p>
