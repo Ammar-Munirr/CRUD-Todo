@@ -19,3 +19,14 @@ def delete(request,id):
     task = Todo.objects.get(id=id)
     task.delete()
     return redirect('/app/task')
+
+def edit(request,id):
+    task = Todo.objects.get(id=id)
+    form = TodoForm(instance=task)
+    if request.method == 'POST':
+        form = TodoForm(request.POST,instance=task)
+        if form.is_valid():
+            form.save()
+            return redirect('/app/task')
+        
+    return render(request,'todo/edit.html',{'form':form})
