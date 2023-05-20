@@ -1,5 +1,9 @@
+{% extends 'todo/base.html' %}
+
+{% block body %}
 <form method='post'>
     {% csrf_token %}
     {{form.as_p}}
     <button type='submit' >Change my mind</button>
 </form>
+{% endblock body %}
