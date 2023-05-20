@@ -5,6 +5,7 @@ class Todo(models.Model):
     task = models.CharField(max_length=100)
     date = models.DateField(auto_now=True)
     time = models.TimeField(auto_now=True)
+    complete = models.BooleanField(default=False)
     
     
     def __str__(self):

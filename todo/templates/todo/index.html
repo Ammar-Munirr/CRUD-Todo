@@ -8,10 +8,21 @@
 <ul>
 {% for task in tasks %}
         <li>
-            <span>{{task.task}}</span>
+            {% if task.complete %}
+            <span class='complete'>{{task.task}}</span>
+            {% else %}
+             <span class='uncomplete' >{{task.task}}</span>
+            {% endif %}
+            <div class="task-details">
+                <span class="task-date">{{ task.date }}</span>
+                <span class="task-time">{{ task.time }}</span>
+            </div>
             <div class="task-buttons">
                 <a href="{% url 'delete' task.id %}"><button>Delete</button></a>
                 <a href="{% url 'Edit' task.id %}"><button>Edit</button></a>
+                {% if not task.complete %}
+                <a href="{% url 'complete' task.id %}"><button>Completed</button></a>
+                {% endif %}
             </div>
         </li>
 {% empty %}

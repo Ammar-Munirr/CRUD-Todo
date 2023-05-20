@@ -30,3 +30,11 @@ def edit(request,id):
             return redirect('/app/task')
         
     return render(request,'todo/edit.html',{'form':form})
+
+
+
+def complete(request,id):
+    task = Todo.objects.get(id=id)
+    task.complete = True
+    task.save()
+    return redirect('/app/task')

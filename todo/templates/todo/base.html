@@ -61,10 +61,26 @@
             display: flex;
             align-items: center;
         }
+        .task-date {
+            font-size: 14px;
+            color: #999;
+        }
+        
+        .task-time {
+            font-size: 14px;
+            color: #666;
+        }
+        .uncomplete{
+            color: red;
+        }
 
         a {
             text-decoration: none;
             margin-right: 10px;
+        }
+        .complete {
+            text-decoration: line-through;
+            color: green;
         }
 
         @media (max-width: 600px) {
@@ -76,6 +92,7 @@
             input[type="text"] {
                 width: 100%;
             }
+
         }
     </style>
 </head>
