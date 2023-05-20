@@ -5,22 +5,98 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task</title>
+    <style>
+        /* CSS styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f2f2f2;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            width: 300px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        button[type="submit"],
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover,
+        button:hover {
+            background-color: #45a049;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 4px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .task-buttons {
+            display: flex;
+            align-items: center;
+        }
+
+        a {
+            text-decoration: none;
+            margin-right: 10px;
+        }
+
+        @media (max-width: 600px) {
+            /* Responsive styling for smaller screens */
+            body {
+                padding: 10px;
+            }
+
+            input[type="text"] {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
-    <form method='post'>
+    <form method="post">
         {% csrf_token %}
         {{form.as_p}}
-        <button type='submit'>Add</button>
+        <button type="submit">Add</button>
     </form>
     <ul>
     {% for task in tasks %}
-            <li>{{task.task}}</li>
-            <a href="{% url 'delete' task.id %}"><button>Delete</button></a>
-            <a href="{% url 'Edit' task.id %}"><button>Edit</button></a>
+            <li>
+                <span>{{task.task}}</span>
+                <div class="task-buttons">
+                    <a href="{% url 'delete' task.id %}"><button>Delete</button></a>
+                    <a href="{% url 'Edit' task.id %}"><button>Edit</button></a>
+                </div>
+            </li>
     {% empty %}
-        <p>There is no task for you Sir/Madam</p>
+        <p>There are no tasks for you, Sir/Madam</p>
     {% endfor %}
     </ul>
-
 </body>
 </html>
