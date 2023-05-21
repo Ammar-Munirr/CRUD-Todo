@@ -10,7 +10,7 @@ def task(request):
         if form.is_valid():
             form.save()
             return redirect('/app/task')
-    task = Todo.objects.all()
+    task = Todo.objects.all().order_by('complete')
     return render(request,'todo/index.html',{'form':form,'tasks':task})
 
 

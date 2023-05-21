@@ -1,0 +1,103 @@
+        /* CSS styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #e8e8e8;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            width: 300px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.228);
+        }
+
+        button[type="submit"],
+        button {
+            padding: 10px 20px;
+            background-color: #2a712c;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover,
+        button:hover {
+            background-color: #45a049;
+        }
+        .delete{
+            background-color: rgb(134, 14, 14);
+            
+        }
+        button.delete[type="submit"]:hover,
+        button.delete:hover {
+            background-color: #9a4a41;
+        }
+        .edit{
+            background-color: rgb(107, 107, 107);
+            
+        }
+        button.edit[type="submit"]:hover,
+        button.edit:hover {
+            background-color: #9e9e9e;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 4px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .task-buttons {
+            display: flex;
+            align-items: center;
+        }
+        .task-date {
+            font-size: 14px;
+            color: #999;
+        }
+        
+        .task-time {
+            font-size: 14px;
+            color: #666;
+        }
+        .uncomplete{
+            color: rgb(201, 29, 29);
+        }
+
+        a {
+            text-decoration: none;
+            margin-right: 10px;
+        }
+        .complete {
+            text-decoration: line-through;
+            color: rgb(18, 69, 18);
+        }
+
+        @media (max-width: 600px) {
+            /* Responsive styling for smaller screens */
+            body {
+                padding: 10px;
+            }
+
+            input[type="text"] {
+                width: 100%;
+            }
+
+        }
